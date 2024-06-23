@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Scaffold(
       appBar: AppBar(
         shape: const Border(bottom: BorderSide(width: 1)),
@@ -98,6 +99,40 @@ void main() {
                       child: Text("Let's cooperate"),
                     ),
                   ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Image.asset("assets/layoutdesigner_online_3.jpg"),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              "Find me on",
+              style: GoogleFonts.robotoCondensed(
+                  fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(
+                  Icons.facebook,
+                  size: 40,
+                ),
+                Icon(
+                  Icons.discord,
+                  size: 40,
+                ),
+                Icon(
+                  Icons.play_arrow,
+                  size: 40,
                 )
               ],
             ),
