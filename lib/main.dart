@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_design/icons.dart';
+import 'package:portfolio_design/button.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -38,74 +40,16 @@ void main() {
                   fontSize: 40, fontWeight: FontWeight.bold),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "Ndifon Titiana",
-              style: GoogleFonts.robotoCondensed(
-                  color: const Color(0xFFfdadad),
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
+          const TextFirst(),
           const SizedBox(
             height: 50,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "I create minimal and simple UI Designs. Do you need aesthetic website or mobile apps? Let me know and let's create something beautiful",
-              style: GoogleFonts.robotoCondensed(fontWeight: FontWeight.bold),
-            ),
-          ),
+          const TextSecond(),
           const SizedBox(
             height: 20,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xff1c4650),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12))),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    child: Text("Let's cooperate"),
-                  ),
-                ),
-                const SizedBox(
-                  width: 40,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: const Color(0xff1c4650),
-                    ),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                        foregroundColor: const Color(0xff1c4650),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12))),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                      child: Text("Let's cooperate"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: Image.asset("assets/layoutdesigner_online_3.jpg"),
-          ),
+          const Button(),
+          const ImageCard(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
@@ -117,28 +61,59 @@ void main() {
           const SizedBox(
             height: 20,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(
-                  Icons.facebook,
-                  size: 40,
-                ),
-                Icon(
-                  Icons.discord,
-                  size: 40,
-                ),
-                Icon(
-                  Icons.play_arrow,
-                  size: 40,
-                )
-              ],
-            ),
-          )
+          const IconsCard()
         ],
       )),
     ),
   ));
+}
+
+class ImageCard extends StatelessWidget {
+  const ImageCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Image.asset("assets/layoutdesigner_online_3.jpg"),
+    );
+  }
+}
+
+class TextSecond extends StatelessWidget {
+  const TextSecond({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(
+        "I create minimal and simple UI Designs. Do you need aesthetic website or mobile apps? Let me know and let's create something beautiful",
+        style: GoogleFonts.robotoCondensed(fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+}
+
+class TextFirst extends StatelessWidget {
+  const TextFirst({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(
+        "Ndifon Titiana",
+        style: GoogleFonts.robotoCondensed(
+            color: const Color(0xFFfdadad),
+            fontSize: 40,
+            fontWeight: FontWeight.bold),
+      ),
+    );
+  }
 }
